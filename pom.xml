@@ -1,0 +1,129 @@
+<?xml version="1.0"?>
+<project
+        xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+        xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <parent>
+        <groupId>com.xiaoniu.architecture</groupId>
+        <artifactId>xiaoniu-parent</artifactId>
+        <version>1.1.5.RELEASE</version>
+        <relativePath/>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.xiaoniu.lending</groupId>
+    <artifactId>lending-gateway</artifactId>
+    <version>1.0.1.RELEASE</version>
+    <packaging>jar</packaging>
+    <name>lending-gateway</name>
+    <url>http://www.xiaoniu.com</url>
+
+    <dependencies>
+        <!-- 认证依赖 -->
+        <dependency>
+            <groupId>com.xiaoniu.lending</groupId>
+            <artifactId>lending-user-center-ifc</artifactId>
+            <version>1.0.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>com.xiaoniu.lending</groupId>
+            <artifactId>lending-auth-api</artifactId>
+            <version>1.0.1.RELEASE</version>
+        </dependency>
+        <dependency>
+            <groupId>com.xiaoniu.lending</groupId>
+            <artifactId>lending-order-api</artifactId>
+            <version>1.0.1.RELEASE</version>
+        </dependency>
+        <dependency>
+            <groupId>com.xiaoniu.lending</groupId>
+            <artifactId>lending-credit-access-api</artifactId>
+            <version>1.0.1.RELEASE</version>
+        </dependency>
+        <!-- 项目组apollo依赖 -->
+        <dependency>
+            <groupId>com.xiaoniu.architecture</groupId>
+            <artifactId>xiaoniu-apollo-client</artifactId>
+            <version>1.0.0.RELEASE</version>
+        </dependency>
+        <!-- 项目组commons -->
+        <dependency>
+            <groupId>com.xiaoniu.architecture</groupId>
+            <artifactId>xiaoniu-commons-web</artifactId>
+            <version>1.1.7.RELEASE</version>
+        </dependency>
+        <!-- 自定义安全组件 -->
+        <dependency>
+            <groupId>com.xiaoniu.architecture</groupId>
+            <artifactId>xiaoniu-spring-boot-starter-security</artifactId>
+            <version>1.2.1.RELEASE</version>
+        </dependency>
+        <!-- Spring Boot Starter -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-starter-logging</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <!-- JSR验证组件 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-validation</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-starter-logging</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <!-- 日志组件 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-log4j2</artifactId>
+        </dependency>
+        <!-- 日志组件依赖，异步打印日志 -->
+        <dependency>
+            <groupId>com.lmax</groupId>
+            <artifactId>disruptor</artifactId>
+        </dependency>
+        <!-- dubbo组件 start-->
+        <dependency>
+            <groupId>com.alibaba.boot</groupId>
+            <artifactId>dubbo-spring-boot-starter</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.curator</groupId>
+            <artifactId>curator-framework</artifactId>
+        </dependency>
+        <!-- dubbo组件 end-->
+        <!-- lombok组件 -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+        </dependency>
+        <!-- 用于Spring Boot暴露监控端点 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+        <!-- test组件 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <finalName>gateway</finalName>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
